@@ -16,12 +16,12 @@ public:
 		denominator_ = denominator;
 	}
 
-	bool operator == (const Fraction& other) { return this->numerator_ == other.numerator_ && this->denominator_ == other.denominator_; }
-	bool operator != (const Fraction& other) { return this->numerator_ != other.numerator_ && this->denominator_ != other.denominator_; }
-	bool operator < (const Fraction& other) { return this->numerator_ > other.numerator_ && this->denominator_ > other.denominator_; }
-	bool operator > (const Fraction& other) { return this->numerator_ < other.numerator_ && this->denominator_ < other.denominator_; }
-	bool operator <= (const Fraction& other) { return this->numerator_ >= other.numerator_ && this->denominator_ >= other.denominator_; }
-	bool operator >= (const Fraction& other) { return this->numerator_ <= other.numerator_ && this->denominator_ <= other.denominator_; }
+	bool operator == (const Fraction& other) { return (this->numerator_ * other.denominator_) == (other.numerator_ * this->denominator_); }
+	bool operator != (const Fraction& other) { return (this->numerator_ * other.denominator_) != (other.numerator_ * this->denominator_); }
+	bool operator < (const Fraction& other) { return (this->numerator_ * other.denominator_) < (other.numerator_ * this->denominator_); }
+	bool operator > (const Fraction& other) { return (this->numerator_ * other.denominator_) > (other.numerator_ * this->denominator_); }
+	bool operator <= (const Fraction& other) { return (this->numerator_ * other.denominator_) <= (other.numerator_ * this->denominator_); }
+	bool operator >= (const Fraction& other) { return (this->numerator_ * other.denominator_) >= (other.numerator_ * this->denominator_); }
 };
 
 int main()
